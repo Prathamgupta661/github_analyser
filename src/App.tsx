@@ -83,7 +83,6 @@ function App() {
       <h1 className="text-2xl font-bold mb-4">GitHub User Analyzer</h1>
       <SearchBar onSearch={handleSearch} />
 
-      {/* Loading state */}
       {isLoading && (
         <>
           <SkeletonRepoList />
@@ -91,12 +90,10 @@ function App() {
         </>
       )}
 
-      {/* Error */}
       {!isLoading && error && (
         <div className="text-red-600 mt-4 font-medium">{error}</div>
       )}
 
-      {/* Repo List + Chart */}
       {!isLoading && !error && (
         <>
           <RepoList repos={paginatedRepos} />
@@ -108,7 +105,6 @@ function App() {
             </div>
           )}
 
-          {/* Pagination */}
           {totalPages > 1 && (
             <div className="flex gap-2 mt-6 flex-wrap">
               {Array.from({ length: totalPages }, (_, i) => (
